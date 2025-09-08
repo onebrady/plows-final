@@ -8,7 +8,7 @@ export default defineConfig({
     target: 'es2019',
     outDir: 'dist',
     rollupOptions: {
-      input: 'src/entry-client.tsx',
+      input: 'index.html',
       output: {
         entryFileNames: 'truckcorp-kb.js',
         assetFileNames: 'truckcorp-kb.[ext]'
