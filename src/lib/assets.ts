@@ -62,33 +62,29 @@ export function getAssetUrl(assetPath: string): string {
   return resolvedUrl;
 }
 
-// Pre-resolved image URLs - use imported assets in development, dynamic resolution in WordPress
+// Pre-resolved image URLs with proper context detection
 export const getImageUrl = (imageName: string) => {
-  // Check if we're in a WordPress context by looking for the container
-  const isWordPressContext = document.querySelector('.tc-snow-container') !== null;
+  // Check if we're in a WordPress context by looking for WordPress-specific indicators
+  // In WordPress, the script will be loaded from a different domain than localhost
+  const isWordPressContext = window.location.hostname !== 'localhost' && 
+                              window.location.hostname !== '127.0.0.1' && 
+                              document.querySelector('.tc-snow-container') !== null;
   
   // In WordPress context, always use absolute URLs from Vercel
   if (isWordPressContext) {
     return getAssetUrl(imageName);
   }
   
-  // In standalone development/production, use imported assets if available
-  if (imageName === IMAGES.tripEdge && tripEdgeImg) {
-    // If it's already an absolute URL (Vite production build), use it
-    if (tripEdgeImg.startsWith('http') || tripEdgeImg.startsWith('/')) {
-      return tripEdgeImg;
-    }
+  // In standalone context (localhost or production), use imported assets directly
+  // The imported assets will have the correct paths for both dev and production
+  if (imageName === IMAGES.tripEdge) {
     return tripEdgeImg;
   }
-  if (imageName === IMAGES.fullTrip && fullTripImg) {
-    // If it's already an absolute URL (Vite production build), use it
-    if (fullTripImg.startsWith('http') || fullTripImg.startsWith('/')) {
-      return fullTripImg;
-    }
+  if (imageName === IMAGES.fullTrip) {
     return fullTripImg;
   }
   
-  // Fall back to dynamic resolution
+  // Fallback for unexpected image names
   return getAssetUrl(imageName);
 };
 
