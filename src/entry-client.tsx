@@ -116,5 +116,9 @@ if (document.readyState !== 'complete') {
 // Make initApp globally available for manual triggering if needed
 ;(window as any).tcSnowInit = initApp
 
-// Export for potential use in other contexts
-export { Homepage, Knowledgebase }
+// Make components globally available instead of exporting
+;(window as any).TruckCorpSnow = {
+  Homepage,
+  Knowledgebase,
+  initApp
+}

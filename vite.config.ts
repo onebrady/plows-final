@@ -11,7 +11,9 @@ export default defineConfig({
       input: 'index.html',
       output: {
         entryFileNames: 'truckcorp-kb.js',
-        assetFileNames: 'truckcorp-kb.[ext]'
+        assetFileNames: 'truckcorp-kb.[ext]',
+        format: 'iife', // Immediately Invoked Function Expression - no modules
+        name: 'TruckCorpSnowApp' // Global variable name
       }
     }
   },
