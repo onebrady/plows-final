@@ -17,6 +17,17 @@ export default defineConfig({
       }
     }
   },
+  // Ensure assets are handled with absolute paths for WordPress compatibility
+  experimental: {
+    renderBuiltUrl(filename, { hostType }) {
+      if (hostType === 'js') {
+        // For JS imports, use dynamic asset resolution
+        return { js: `getAssetUrl('${filename}')` }
+      }
+      // For other assets, return the filename as-is (will be resolved dynamically)
+      return filename
+    }
+  },
   define: {
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
   }

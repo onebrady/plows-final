@@ -16,8 +16,7 @@ import {
 } from "lucide-react";
 import { Layout } from "./Layout";
 import { cn } from "../lib/utils";
-import tripEdgeImage from "../assets/images/trip-edgex.jpg";
-import fullTripImage from "../assets/images/full-trip.jpg";
+import { getImageUrl, IMAGES } from "../lib/assets";
 
 export function Homepage() {
   return (
@@ -86,7 +85,7 @@ export function Homepage() {
             >
               <div className="rounded-lg overflow-hidden shadow-industrial-lg">
                 <img 
-                  src={tripEdgeImage} 
+                  src={getImageUrl(IMAGES.tripEdge)} 
                   alt="ARM Trip Edge Snowplow Blade" 
                   className="w-full h-auto object-cover"
                 />
@@ -300,7 +299,7 @@ export function Homepage() {
               >
                 <div className="rounded-lg overflow-hidden shadow-industrial-lg">
                   <img 
-                    src={fullTripImage} 
+                    src={getImageUrl(IMAGES.fullTrip)} 
                     alt="ARM Full Trip Snowplow" 
                     className="w-full h-auto object-cover"
                   />

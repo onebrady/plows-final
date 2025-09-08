@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Homepage } from './components/Homepage'
 import { Knowledgebase } from './components/knowledgebase/Knowledgebase'
+import { WordPressIsolation } from './components/WordPressIsolation'
 import './styles.css'
 
 // Simple routing component
@@ -18,12 +19,11 @@ function App() {
     return () => window.removeEventListener('navigate' as any, handleNavigation)
   }, [])
 
-  switch (currentPage) {
-    case 'knowledgebase':
-      return <Knowledgebase />
-    default:
-      return <Homepage />
-  }
+  return (
+    <WordPressIsolation>
+      {currentPage === 'knowledgebase' ? <Knowledgebase /> : <Homepage />}
+    </WordPressIsolation>
+  )
 }
 
 // Navigation helper function
