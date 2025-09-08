@@ -28,6 +28,10 @@ build/
 # Misc
 Thumbs.db
 
+# Screenshots and temporary files
+*.png
+screenshot.js
+
 # Keep WordPress plugin local only
 wordpress-plugin/
 wp-plugin/

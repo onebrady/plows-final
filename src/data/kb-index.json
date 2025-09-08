@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "id": "plow-types",
+      "title": "Snow Plow Types & Configurations",
+      "shortTitle": "Plow Types",
+      "description": "Understanding different plow types and their optimal use cases",
+      "icon": "snowflake",
+      "file": "kb-plow-types.json"
+    },
+    {
+      "id": "blades-edges", 
+      "title": "Plow Blades & Cutting Edges",
+      "shortTitle": "Blades & Edges",
+      "description": "Blade formats and cutting edge materials for optimal performance",
+      "icon": "wrench",
+      "file": "kb-blades-edges.json"
+    },
+    {
+      "id": "hydraulics-controls",
+      "title": "Hydraulics & Controls",
+      "shortTitle": "Hydraulics", 
+      "description": "Central hydraulics, operator controls, and integrated systems",
+      "icon": "cog",
+      "file": "kb-hydraulics-controls.json"
+    },
+    {
+      "id": "truck-setup",
+      "title": "Truck Setup & Attachments",
+      "shortTitle": "Truck Setup",
+      "description": "Vehicle integration, weight considerations, and procurement guidelines", 
+      "icon": "truck",
+      "file": "kb-truck-setup.json"
+    },
+    {
+      "id": "control-strategies",
+      "title": "Materials & Application Strategies",
+      "shortTitle": "Materials",
+      "description": "Deicing materials, application strategies, and best practices",
+      "icon": "target",
+      "file": "kb-control-strategies.json"
+    },
+    {
+      "id": "maintenance-safety",
+      "title": "Maintenance & Safety",
+      "shortTitle": "Maintenance",
+      "description": "Daily routines, equipment care, operator safety, and extreme weather procedures",
+      "icon": "shield",
+      "file": "kb-maintenance-safety.json"
+    }
+  ]
+}

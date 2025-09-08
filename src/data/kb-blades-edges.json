@@ -1,0 +1,147 @@
+{
+  "id": "blades-edges",
+  "title": "Plow Blades & Cutting Edges",
+  "description": "Blade formats and cutting edge materials for optimal performance",
+  "sections": [
+    {
+      "type": "intro", 
+      "content": "The right blade format and cutting edge material combination is crucial for effective snow removal and equipment longevity."
+    },
+    {
+      "type": "blade-formats",
+      "title": "Blade Formats",
+      "items": [
+        {
+          "name": "Straight Blade",
+          "description": "Simple, durable design with broad coverage",
+          "pros": ["Lowest complexity", "Most durable", "Broadest coverage", "Easy maintenance"],
+          "cons": ["Limited versatility", "Less effective in heavy drifts"],
+          "bestFor": "General purpose snow removal on most routes"
+        },
+        {
+          "name": "V-Blade", 
+          "description": "V-shaped configuration that can open drifts and reconfigure for scooping",
+          "pros": ["Opens drifts effectively", "Multiple configurations", "Excellent for storm recovery"],
+          "cons": ["Heavier weight", "Higher cost", "More complex hydraulics"],
+          "bestFor": "Areas prone to drifting and heavy accumulation"
+        },
+        {
+          "name": "Expandable/Winged",
+          "description": "Telescopes or flips out for variable width on demand", 
+          "pros": ["Adjustable width", "Versatile coverage", "Efficient for varying road widths"],
+          "cons": ["Requires stronger hydraulics", "More complex frame", "Higher maintenance"],
+          "bestFor": "Routes with varying lane widths and shoulder conditions"
+        },
+        {
+          "name": "Underbody Blade",
+          "description": "Scrapes bonded pack and ice that front plows leave behind",
+          "pros": ["Excellent pack removal", "Complements front operations", "Effective at speed"],
+          "cons": ["Additional complexity", "Limited ground clearance", "Specialized application"],
+          "bestFor": "High-speed routes with persistent ice and pack conditions"
+        }
+      ]
+    },
+    {
+      "type": "cutting-edge-comparison",
+      "title": "Cutting Edge Materials",
+      "description": "Choose the right material based on your specific conditions and budget",
+      "materials": [
+        {
+          "material": "Carbon Steel",
+          "pros": [
+            "Low upfront cost",
+            "Good all-around performance",
+            "Easy to replace mid-season",
+            "Readily available"
+          ],
+          "cons": [
+            "Wears fastest",
+            "May crack on obstacles",
+            "Frequent replacement needed"
+          ],
+          "typicalUse": "General routes with easy mid-season change-outs",
+          "costRating": "Low",
+          "durabilityRating": "Standard"
+        },
+        {
+          "material": "Carbide-Insert Steel",
+          "pros": [
+            "Very long wear life",
+            "Best per-mile cost on highways", 
+            "Excellent cutting performance",
+            "Reduced maintenance frequency"
+          ],
+          "cons": [
+            "Brittle if abused",
+            "Higher upfront cost",
+            "Requires careful handling"
+          ],
+          "typicalUse": "High-mile primary routes and highways",
+          "costRating": "High",
+          "durabilityRating": "Excellent"
+        },
+        {
+          "material": "Rubber",
+          "pros": [
+            "Quiet operation", 
+            "Protects sensitive surfaces",
+            "Conforms to surface irregularities",
+            "Low noise complaints"
+          ],
+          "cons": [
+            "Poor ice cutting ability",
+            "Faster wear rate",
+            "Limited effectiveness in hard conditions"
+          ],
+          "typicalUse": "Parking decks, brick surfaces, sensitive asphalt",
+          "costRating": "Medium",
+          "durabilityRating": "Fair"
+        },
+        {
+          "material": "Polyurethane",
+          "pros": [
+            "Longer-lasting vs rubber",
+            "Low vibration", 
+            "Good surface protection",
+            "Better wear resistance than rubber"
+          ],
+          "cons": [
+            "Higher cost than rubber",
+            "Still limited ice cutting",
+            "Specialized application"
+          ],
+          "typicalUse": "Urban and sensitive surfaces needing durability",
+          "costRating": "High", 
+          "durabilityRating": "Good"
+        }
+      ]
+    },
+    {
+      "type": "pro-tip",
+      "title": "Professional Tip",
+      "content": "If you're wearing out steel edges mid-season on high-speed routes, switch to carbide-insert segments and track life by lane-mile, not by calendar. This approach typically provides better cost-per-mile performance."
+    },
+    {
+      "type": "selection-guide",
+      "title": "Selection Guidelines",
+      "factors": [
+        {
+          "factor": "Route Type",
+          "considerations": ["Highway vs urban", "Speed limits", "Traffic volume", "Surface sensitivity"]
+        },
+        {
+          "factor": "Operating Conditions", 
+          "considerations": ["Ice frequency", "Snow depth", "Temperature range", "Abrasive materials"]
+        },
+        {
+          "factor": "Budget Constraints",
+          "considerations": ["Initial cost", "Replacement frequency", "Labor costs", "Total cost of ownership"]
+        },
+        {
+          "factor": "Maintenance Capacity",
+          "considerations": ["Change-out frequency", "Staff availability", "Storage requirements", "Inventory management"]
+        }
+      ]
+    }
+  ]
+}

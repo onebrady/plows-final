@@ -1,0 +1,251 @@
+{
+  "id": "control-strategies",
+  "title": "Snow & Ice Control Strategies", 
+  "description": "Effective strategies, materials, and application practices for winter road maintenance",
+  "sections": [
+    {
+      "type": "intro",
+      "content": "Successful winter road maintenance combines the right strategy, materials, and timing. Understanding when to apply proactive vs. reactive approaches can significantly impact effectiveness and costs."
+    },
+    {
+      "type": "strategy-comparison",
+      "title": "Anti-icing vs. Deicing Strategies",
+      "strategies": [
+        {
+          "strategy": "Anti-icing (Proactive)",
+          "description": "Apply liquids before or at storm onset to prevent ice bonding to pavement",
+          "timing": "Before precipitation begins or at storm onset",
+          "materials": "Liquid deicers (brine, liquid chlorides)",
+          "benefits": [
+            "Lower total salt usage",
+            "Faster post-storm cleanup", 
+            "Prevents ice bond formation",
+            "More cost-effective when timed properly",
+            "Reduced environmental impact"
+          ],
+          "limitations": [
+            "Less effective in freezing rain conditions",
+            "Reduced effectiveness in high winds",
+            "Requires re-treatment as temperatures fall",
+            "Weather-dependent timing is critical"
+          ],
+          "bestFor": "Predictable storm conditions with advance notice"
+        },
+        {
+          "strategy": "Deicing (Reactive)",
+          "description": "Plow first, then apply materials to break existing ice bond and prevent refreeze",
+          "timing": "After snow/ice accumulation has occurred",
+          "materials": "Solid and liquid deicers applied after plowing",
+          "process": [
+            "1. Plow to remove loose snow",
+            "2. Apply deicing materials to break bond", 
+            "3. Allow time for chemical action",
+            "4. Repeat plowing and application as needed"
+          ],
+          "benefits": [
+            "Effective in all weather conditions",
+            "Works on established ice and pack",
+            "Familiar process for most operators",
+            "Reliable results when properly executed"
+          ],
+          "considerations": [
+            "Higher material usage typically required",
+            "Longer time to achieve bare pavement", 
+            "More labor-intensive process",
+            "Higher total operational costs"
+          ],
+          "bestFor": "Emergency response and severe weather events"
+        }
+      ]
+    },
+    {
+      "type": "materials-guide",
+      "title": "Materials & Temperature Guidelines",
+      "overview": "Select the right material based on temperature, conditions, and environmental considerations. Temperature effectiveness is the key decision factor.",
+      "materials": [
+        {
+          "name": "NaCl (Salt)",
+          "tempRange": "Effective ~15–20°F pavement",
+          "cost": "Low",
+          "description": "Economical and widely available. The standard choice for general winter maintenance operations.",
+          "keyPoints": [
+            "Good all-rounder for most conditions",
+            "Pre-wet to reduce bounce/scatter",
+            "Easy mid-season change-outs"
+          ],
+          "considerations": [
+            "Less effective below 15°F",
+            "Can damage vegetation if over-applied"
+          ]
+        },
+        {
+          "name": "CaCl₂ / MgCl₂",
+          "tempRange": "Lower working temps (down to -25°F)",
+          "cost": "Medium",
+          "description": "Great as pre-wet or for deep cold conditions. Calcium chloride works to -25°F, magnesium chloride to -13°F.",
+          "keyPoints": [
+            "Excellent for pre-wet applications",
+            "Works in extreme cold",
+            "Fast-acting ice melting"
+          ],
+          "considerations": [
+            "More expensive than salt",
+            "Manage corrosion potential",
+            "MgCl₂ less corrosive than CaCl₂"
+          ]
+        },
+        {
+          "name": "CMA/Acetates",
+          "tempRange": "Variable, typically 15°F and above",
+          "cost": "High",
+          "description": "Lower environmental chloride impact with higher cost. Use where mandated or in sensitive areas.",
+          "keyPoints": [
+            "Lowest environmental chloride impact",
+            "Biodegradable options available",
+            "Required in some jurisdictions"
+          ],
+          "considerations": [
+            "Significantly higher cost",
+            "Limited temperature effectiveness",
+            "May require specialized equipment"
+          ]
+        },
+        {
+          "name": "Sand/Grit",
+          "tempRange": "All temperatures",
+          "cost": "Low",
+          "description": "Traction aid for very cold/unpaved surfaces. Provides mechanical traction, not melting.",
+          "keyPoints": [
+            "Works at any temperature",
+            "Good for unpaved roads",
+            "Emergency traction on steep grades"
+          ],
+          "considerations": [
+            "Requires post-storm cleanup",
+            "No melting capability",
+            "Environmental considerations for drainage"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "application-practices",
+      "title": "Application Best Practices",
+      "overview": "Pre-wet, target lane-mile rates (use ground-speed control), prioritize bridges/grades/curves/intersections, monitor and re-treat strategically.",
+      "practices": [
+        {
+          "category": "Pre-wetting",
+          "description": "Apply liquids to solids before or during application",
+          "points": [
+            "8-12 gallons liquid per ton of solid (typical ratio)",
+            "Reduces bounce and scatter",
+            "Faster chemical activation",
+            "Adjust ratios based on temperature"
+          ]
+        },
+        {
+          "category": "Application Rates",
+          "description": "Use ground-speed control for consistent lane-mile coverage", 
+          "points": [
+            "Anti-icing: 25-50 gallons per lane-mile",
+            "Light snow: 200-400 lbs per lane-mile",
+            "Moderate conditions: 400-600 lbs per lane-mile", 
+            "Heavy/ice: 600+ lbs per lane-mile"
+          ]
+        },
+        {
+          "category": "Priority Areas",
+          "description": "Treat critical areas first for maximum safety impact",
+          "points": [
+            "Bridges, overpasses, elevated structures",
+            "Steep grades and curves", 
+            "Major intersections and signals",
+            "Emergency routes and hospital access"
+          ]
+        },
+        {
+          "category": "Timing Strategy",
+          "description": "Monitor conditions and time applications strategically",
+          "points": [
+            "Don't salt what you're about to plow off",
+            "Allow time for chemical action before plowing",
+            "Monitor pavement temperature, not air temperature",
+            "Re-treat based on conditions, not schedule"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "environmental-considerations", 
+      "title": "Environmental Considerations",
+      "overview": "Balance operational effectiveness with environmental stewardship through smart material choices and application practices.",
+      "areas": [
+        {
+          "concern": "Water Quality",
+          "impacts": ["Chloride contamination of groundwater", "Salt damage to aquatic ecosystems", "Drinking water well contamination"],
+          "mitigation": [
+            "Use minimum effective application rates",
+            "Consider alternative materials in sensitive areas", 
+            "Implement proper storage and handling",
+            "Monitor and test nearby water sources"
+          ]
+        },
+        {
+          "concern": "Vegetation",
+          "impacts": ["Salt burn on roadside plants", "Soil contamination", "Tree and shrub damage"],
+          "mitigation": [
+            "Avoid over-application near vegetation",
+            "Use less harmful materials where possible",
+            "Consider physical barriers",
+            "Plan spring remediation if needed"
+          ]
+        },
+        {
+          "concern": "Infrastructure",
+          "impacts": ["Accelerated corrosion of metals", "Concrete degradation", "Vehicle corrosion"],
+          "mitigation": [
+            "Use corrosion inhibitors where appropriate",
+            "Select less corrosive materials for sensitive areas",
+            "Proper post-storm washing procedures",
+            "Regular infrastructure inspection and maintenance"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "decision-matrix",
+      "title": "Strategy Selection Matrix",
+      "description": "Use these guidelines to select the appropriate strategy and materials for your specific conditions.",
+      "scenarios": [
+        {
+          "conditions": "Forecast: Light snow (1-3\"), Temperature: 25°F, Time: 2 hours before storm",
+          "strategy": "Anti-icing",
+          "material": "Salt brine solution", 
+          "rate": "30-40 gallons per lane-mile",
+          "notes": "Ideal conditions for preventive treatment"
+        },
+        {
+          "conditions": "Current: 2\" snow on ground, Temperature: 18°F, Bonded ice present",
+          "strategy": "Deicing",
+          "material": "Pre-wetted salt or salt/sand mix",
+          "rate": "400-500 lbs per lane-mile", 
+          "notes": "Plow first, then treat. Consider calcium chloride pre-wet."
+        },
+        {
+          "conditions": "Current: Freezing rain, Temperature: 28°F, Heavy traffic",
+          "strategy": "Aggressive Deicing",
+          "material": "Pre-wetted salt with calcium chloride",
+          "rate": "600+ lbs per lane-mile",
+          "notes": "Continuous monitoring and re-treatment required"
+        },
+        {
+          "conditions": "Forecast: Heavy snow (6\"), Temperature: 10°F, Rural routes",
+          "strategy": "Combined",
+          "material": "Anti-ice with brine, then deice with salt/sand",
+          "rate": "Variable based on storm progression",
+          "notes": "Pre-treat, then switch to sand/salt mix as temperature drops"
+        }
+      ]
+    }
+  ]
+}

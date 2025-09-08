@@ -1,0 +1,15 @@
+{
+  "id": "truck-setup",
+  "title": "Truck Setup & Attachments",
+  "description": "Vehicle integration, weight considerations, and procurement guidelines", 
+  "sections": [
+    {
+      "type": "intro",
+      "content": "Proper truck setup and attachment selection ensures safe operation, regulatory compliance, and optimal performance throughout the snow season."
+    },
+    {
+      "type": "weight-ratings",
+      "title": "Weight & Load Ratings"
+    }
+  ]
+}

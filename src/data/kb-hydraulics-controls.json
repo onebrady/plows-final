@@ -1,0 +1,15 @@
+{
+  "id": "hydraulics-controls", 
+  "title": "Hydraulics & Controls",
+  "description": "Central hydraulics, operator controls, and integrated systems including Olympus",
+  "sections": [
+    {
+      "type": "intro",
+      "content": "Proper hydraulic system design and intuitive controls are essential for efficient snow removal operations and operator safety."
+    },
+    {
+      "type": "central-hydraulics",
+      "title": "Central Hydraulic Systems"
+    }
+  ]
+}

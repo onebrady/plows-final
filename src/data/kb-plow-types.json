@@ -1,0 +1,15 @@
+{
+  "id": "plow-types",
+  "title": "Snow Plow Types & Configurations", 
+  "description": "Understanding different plow types and their optimal use cases",
+  "sections": [
+    {
+      "type": "intro",
+      "content": "Choose the right plow configuration for your specific routes and conditions. Each type serves different operational needs."
+    },
+    {
+      "type": "plow-overview",
+      "title": "Plow Types & Selection Guide"
+    }
+  ]
+}

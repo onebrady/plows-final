@@ -1,0 +1,15 @@
+{
+  "id": "maintenance-safety",
+  "title": "Maintenance & Safety",
+  "description": "Daily routines, equipment care, operator safety, and extreme weather procedures",
+  "sections": [
+    {
+      "type": "intro",
+      "content": "Proper maintenance and safety practices ensure reliable equipment operation, extend service life, and protect operators and the public during winter operations."
+    },
+    {
+      "type": "maintenance-overview",
+      "title": "Maintenance & Safety Overview"
+    }
+  ]
+}

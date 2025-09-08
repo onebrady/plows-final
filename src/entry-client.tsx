@@ -1,8 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { KbApp } from './components/KbApp'
-import data from './data/kb.json'
+import { Homepage } from './components/Homepage'
+import { Knowledgebase } from './components/knowledgebase/Knowledgebase'
 import './styles.css'
+
+// Simple routing component
+function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'knowledgebase'>('home')
+
+  // Listen for navigation events
+  React.useEffect(() => {
+    const handleNavigation = (event: CustomEvent) => {
+      setCurrentPage(event.detail.page)
+    }
+
+    window.addEventListener('navigate' as any, handleNavigation)
+    return () => window.removeEventListener('navigate' as any, handleNavigation)
+  }, [])
+
+  switch (currentPage) {
+    case 'knowledgebase':
+      return <Knowledgebase />
+    default:
+      return <Homepage />
+  }
+}
+
+// Navigation helper function
+(window as any).navigateTo = (page: string) => {
+  window.dispatchEvent(new CustomEvent('navigate', { detail: { page } }))
+}
 
 // Function to initialize the app
 function initApp() {
@@ -31,9 +58,9 @@ function initApp() {
       }
     }
     
-    // Render the app
+    // Render the app with routing
     const root = createRoot(container)
-    root.render(<KbApp data={data} ssrVisibleQAs={3} />)
+    root.render(<App />)
   })
 }
 
@@ -45,4 +72,4 @@ if (document.readyState === 'loading') {
 }
 
 // Export for potential use in other contexts
-export { KbApp, data }
+export { Homepage, Knowledgebase }
