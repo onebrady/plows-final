@@ -1,0 +1,76 @@
+{
+  "topics": [
+    {
+      "slug": "plows-101",
+      "title": "Plows 101",
+      "teaser": "Trip-edge vs full-trip, sizing, and when to add wings or underbody.",
+      "qas": [
+        {
+          "id": "q1",
+          "q": "Trip-edge vs full-trip: what's the difference?",
+          "a": "Trip-edge trips at the cutting edge to absorb obstacles while keeping the load. Full-trip pivots the whole moldboard to soften impacts at speed."
+        },
+        {
+          "id": "q2",
+          "q": "Straight, V, or Wing\u2014when to choose which?",
+          "a": "Straight for versatility; V to break drifts and switch modes; Wing to increase cleared width per pass alongside a front plow."
+        },
+        {
+          "id": "q3",
+          "q": "How do I size moldboard width/height?",
+          "a": "Match to lane width/turning envelope; confirm coverage at typical plow angles; balance height for sightlines vs blow-back control."
+        },
+        {
+          "id": "q4",
+          "q": "Which cutting edge material should I use?",
+          "a": "Steel for general durability; rubber/poly for surface sensitivity; carbide inserts for maximum wear life on abrasive routes."
+        }
+      ],
+      "glossary": [
+        "Trip-edge",
+        "Full-trip",
+        "Moldboard",
+        "Cutting edge",
+        "Wing",
+        "Underbody"
+      ],
+      "quickWins": [
+        "Use deflectors to reduce blow-back.",
+        "Verify legal width at working angle.",
+        "Pre-trip clearance check."
+      ]
+    },
+    {
+      "slug": "spreaders-101",
+      "title": "Spreaders & De-icing 101",
+      "teaser": "Under-tailgate TG-505 basics, application rates, material handling.",
+      "qas": [
+        {
+          "id": "q1",
+          "q": "Why an under-tailgate like the TG-505?",
+          "a": "Keeps the dump bed free, stainless build, left/right discharge; a municipal workhorse."
+        },
+        {
+          "id": "q2",
+          "q": "What\u2019s my target application rate?",
+          "a": "Base on lane-miles and storm profile; tie to ground speed via controls; calibrate monthly in peak season."
+        },
+        {
+          "id": "q3",
+          "q": "Pre-wet vs dry?",
+          "a": "Pre-wet improves stick and activation, reducing bounce/scatter waste; validate pump rates and nozzle placement."
+        }
+      ],
+      "glossary": [
+        "TG-505",
+        "Pre-wet",
+        "Lane-mile"
+      ],
+      "quickWins": [
+        "Prioritize bridges/grades.",
+        "Log blasts/pauses.",
+        "Wash-down after events."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+.tc-snow { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.45; color: #0f172a; }
+.tc-snow * { box-sizing: border-box; }
+.tc-snow .kb-container { max-width: 960px; margin: 0 auto; padding: 24px; }
+.tc-snow h1 { font-size: 28px; margin: 0 0 12px; }
+.tc-snow h2 { font-size: 20px; margin: 16px 0 8px; }
+.tc-snow .tile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 16px 0; }
+.tc-snow .tile { border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px; background: #fff; }
+.tc-snow .qa { border-top: 1px solid #e2e8f0; padding: 12px 0; }
+.tc-snow .qa:first-child { border-top: 0; }
+.tc-snow .qa button.qa-toggle { all: unset; cursor: pointer; display: block; font-weight: 600; }
+.tc-snow .qa .a { margin-top: 6px; display: none; }
+.tc-snow .qa[aria-expanded="true"] .a { display: block; }
+.tc-snow .glossary { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.tc-snow .chip { background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 999px; padding: 4px 10px; font-size: 12px; }
+.tc-snow .quickwins { background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 8px 12px; margin-top: 12px; }
