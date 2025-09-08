@@ -4,6 +4,11 @@ import fullTripImg from '../assets/images/full-trip.jpg';
 
 // Asset URL resolver for WordPress embedding
 export function getAssetUrl(assetPath: string): string {
+  // If already an absolute URL, return as-is
+  if (assetPath.startsWith('http://') || assetPath.startsWith('https://')) {
+    return assetPath;
+  }
+
   let baseUrl = '';
   
   // Try to get base URL from WordPress config first
@@ -15,6 +20,7 @@ export function getAssetUrl(assetPath: string): string {
         const config = JSON.parse(configAttr);
         if (config.baseUrl) {
           baseUrl = config.baseUrl;
+          console.log('TruckCorp Snow: Using WordPress config baseUrl:', baseUrl);
         }
       } catch (e) {
         console.warn('TruckCorp Snow: Failed to parse config for base URL');
@@ -31,6 +37,7 @@ export function getAssetUrl(assetPath: string): string {
         // Extract base URL from script source
         const url = new URL(scriptSrc, window.location.href);
         baseUrl = `${url.protocol}//${url.host}`;
+        console.log('TruckCorp Snow: Using script src baseUrl:', baseUrl);
       }
     }
   }
@@ -41,29 +48,47 @@ export function getAssetUrl(assetPath: string): string {
     if (window.location.hostname === 'localhost') {
       baseUrl = 'http://localhost:5173';
     } else {
-      // Production fallback
+      // Production fallback - always use Vercel for assets
       baseUrl = 'https://plows-final.vercel.app';
     }
+    console.log('TruckCorp Snow: Using fallback baseUrl:', baseUrl);
   }
   
   // Remove leading slash from asset path if present
   const cleanPath = assetPath.startsWith('/') ? assetPath.slice(1) : assetPath;
   
-  console.log(`TruckCorp Snow: Resolving asset ${assetPath} to ${baseUrl}/${cleanPath}`);
-  return `${baseUrl}/${cleanPath}`;
+  const resolvedUrl = `${baseUrl}/${cleanPath}`;
+  console.log(`TruckCorp Snow: Resolving asset ${assetPath} to ${resolvedUrl}`);
+  return resolvedUrl;
 }
 
 // Pre-resolved image URLs - use imported assets in development, dynamic resolution in WordPress
 export const getImageUrl = (imageName: string) => {
-  // In development or when imported assets are available, use them directly
+  // Check if we're in a WordPress context by looking for the container
+  const isWordPressContext = document.querySelector('.tc-snow-container') !== null;
+  
+  // In WordPress context, always use absolute URLs from Vercel
+  if (isWordPressContext) {
+    return getAssetUrl(imageName);
+  }
+  
+  // In standalone development/production, use imported assets if available
   if (imageName === IMAGES.tripEdge && tripEdgeImg) {
+    // If it's already an absolute URL (Vite production build), use it
+    if (tripEdgeImg.startsWith('http') || tripEdgeImg.startsWith('/')) {
+      return tripEdgeImg;
+    }
     return tripEdgeImg;
   }
   if (imageName === IMAGES.fullTrip && fullTripImg) {
+    // If it's already an absolute URL (Vite production build), use it
+    if (fullTripImg.startsWith('http') || fullTripImg.startsWith('/')) {
+      return fullTripImg;
+    }
     return fullTripImg;
   }
   
-  // Fall back to dynamic resolution for WordPress embedding
+  // Fall back to dynamic resolution
   return getAssetUrl(imageName);
 };
 
