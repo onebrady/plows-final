@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './styles.css'
 type QA = { id: string, q: string, a: string }
 type Topic = { slug: string, title: string, teaser: string, qas: QA[], glossary?: string[], quickWins?: string[] }
 type Data = { topics: Topic[] }
