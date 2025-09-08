@@ -1,56 +1,169 @@
 @import "tailwindcss";
 
-/* WordPress Isolation Styles */
+/* WordPress Isolation Styles - Enhanced for Theme Compatibility */
 .truckcorp-snow-app-root {
-  /* Complete CSS reset and isolation */
+  /* Aggressive CSS reset and isolation */
   all: revert !important;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
   font-size: 16px !important;
+  font-weight: 400 !important;
   line-height: 1.5 !important;
   color: #334155 !important;
-  background-color: transparent !important;
+  background-color: #ffffff !important; /* Force white background */
   box-sizing: border-box !important;
   isolation: isolate !important;
   position: relative !important;
   text-align: left !important;
   direction: ltr !important;
-  /* Prevent common WordPress theme interference */
+  /* Prevent WordPress theme interference */
   text-shadow: none !important;
   letter-spacing: normal !important;
   word-spacing: normal !important;
   text-transform: none !important;
+  /* Layout protection */
+  margin: 0 !important;
+  padding: 2rem !important;
+  border: none !important;
+  /* Ensure proper stacking */
+  z-index: 1 !important;
 }
 
+/* Aggressive reset for all child elements */
 .truckcorp-snow-app-root *,
 .truckcorp-snow-app-root *::before,
 .truckcorp-snow-app-root *::after {
   box-sizing: border-box !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  text-shadow: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+  background: transparent !important;
 }
 
-/* Ensure our content displays properly */
-.truckcorp-snow-app-root img {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block !important;
+/* Typography protection */
+.truckcorp-snow-app-root h1,
+.truckcorp-snow-app-root h2,
+.truckcorp-snow-app-root h3,
+.truckcorp-snow-app-root h4,
+.truckcorp-snow-app-root h5,
+.truckcorp-snow-app-root h6 {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  text-shadow: none !important;
 }
 
+.truckcorp-snow-app-root p,
+.truckcorp-snow-app-root div,
+.truckcorp-snow-app-root span {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Button and form element protection */
 .truckcorp-snow-app-root button {
   font-family: inherit !important;
+  font-weight: inherit !important;
   cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  text-shadow: none !important;
+  text-transform: none !important;
 }
 
 .truckcorp-snow-app-root a {
   color: inherit !important;
   text-decoration: none !important;
+  background: transparent !important;
+  text-shadow: none !important;
 }
 
-/* Ensure Tailwind utilities work inside our isolated container */
+/* Image protection */
+.truckcorp-snow-app-root img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Layout utilities protection */
+.truckcorp-snow-app-root .flex {
+  display: flex !important;
+}
+
+.truckcorp-snow-app-root .grid {
+  display: grid !important;
+}
+
+.truckcorp-snow-app-root .block {
+  display: block !important;
+}
+
+.truckcorp-snow-app-root .hidden {
+  display: none !important;
+}
+
+/* Container utility with stronger isolation */
 .truckcorp-snow-app-root .container-app {
-  max-width: 1260px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: 1260px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  background-color: transparent !important;
+}
+
+/* Tailwind color class protection */
+.truckcorp-snow-app-root [class*="bg-"] {
+  background-color: var(--tw-bg-opacity, 1) !important;
+}
+
+.truckcorp-snow-app-root [class*="text-"] {
+  color: inherit !important;
+}
+
+/* WordPress theme override protection */
+.truckcorp-snow-app-root .entry-content,
+.truckcorp-snow-app-root .post-content,
+.truckcorp-snow-app-root .page-content {
+  font-family: inherit !important;
+  color: inherit !important;
+  background: transparent !important;
+}
+
+/* Ensure proper spacing and margins */
+.truckcorp-snow-app-root > * {
+  margin-top: 0 !important;
+}
+
+.truckcorp-snow-app-root > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* Specific button text color protection */
+.truckcorp-snow-app-root .text-white,
+.truckcorp-snow-app-root .text-white *,
+.truckcorp-snow-app-root button.text-white {
+  color: #ffffff !important;
+}
+
+/* Contact button specific protection */
+.truckcorp-snow-app-root .bg-truckcorp-orange-500,
+.truckcorp-snow-app-root .bg-truckcorp-orange-600 {
+  color: #ffffff !important;
 }
 
 /* TruckCorp Design System */
