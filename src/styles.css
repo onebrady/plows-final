@@ -1,5 +1,58 @@
 @import "tailwindcss";
 
+/* WordPress Isolation Styles */
+.truckcorp-snow-app-root {
+  /* Complete CSS reset and isolation */
+  all: revert !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: #334155 !important;
+  background-color: transparent !important;
+  box-sizing: border-box !important;
+  isolation: isolate !important;
+  position: relative !important;
+  text-align: left !important;
+  direction: ltr !important;
+  /* Prevent common WordPress theme interference */
+  text-shadow: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+}
+
+.truckcorp-snow-app-root *,
+.truckcorp-snow-app-root *::before,
+.truckcorp-snow-app-root *::after {
+  box-sizing: border-box !important;
+}
+
+/* Ensure our content displays properly */
+.truckcorp-snow-app-root img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.truckcorp-snow-app-root button {
+  font-family: inherit !important;
+  cursor: pointer !important;
+}
+
+.truckcorp-snow-app-root a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Ensure Tailwind utilities work inside our isolated container */
+.truckcorp-snow-app-root .container-app {
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 /* TruckCorp Design System */
 @theme {
   --color-truckcorp-orange-50: #fff7ed;
