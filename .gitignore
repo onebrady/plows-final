@@ -29,5 +29,6 @@ build/
 Thumbs.db
 
 # Keep WordPress plugin local only
+wordpress-plugin/
 wp-plugin/
 app/
