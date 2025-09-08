@@ -1,143 +1,104 @@
-# TruckCorp Snow & Ice — Vite App + WordPress Plugin
+# TruckCorp Snow & Ice Knowledgebase
 
-This project provides a **React + Vite** knowledgebase app that will be hosted on Vercel, with a WordPress plugin to embed it on any page.
+A React + Vite application for the TruckCorp Snow & Ice knowledgebase, designed to be embedded in WordPress sites via a custom plugin.
 
-## Architecture
+## 🚀 Quick Start
 
-- **Vite App** (`/app`): React application that builds into static assets
-- **WordPress Plugin** (`/wp-plugin`): Simple plugin that loads the app from Vercel
-- **Hosting**: App will be deployed to Vercel via GitHub integration
-
-## Development Setup
-
-### Prerequisites
-- Node.js 18+ (recommended 20/22)
-- npm or pnpm
-- Git
-
-### Local Development
-
-1. **Clone the repository**
 ```bash
-git clone [your-repo-url]
-cd plows-final
-```
-
-2. **Install dependencies**
-```bash
-cd app
+# Install dependencies
 npm install
-```
 
-3. **Set up environment variables**
-```bash
-cp .env.example .env.local
-# Edit .env.local if needed
-```
-
-4. **Run development server**
-```bash
+# Run development server
 npm run dev
 # Opens at http://localhost:5173
-```
 
-5. **Build locally to test**
-```bash
+# Build for production
 npm run build
-# Creates dist/ folder with production assets
 ```
 
-## Deployment Workflow
-
-### Step 1: Push to GitHub
-
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-### Step 2: Connect GitHub to Vercel
-
-1. Go to [vercel.com](https://vercel.com)
-2. Click "Add New Project"
-3. Import your GitHub repository
-4. Configure:
-   - Root Directory: `app`
-   - Framework Preset: Vite
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-5. Deploy
-
-Vercel will automatically deploy on every push to main branch.
-
-### Step 3: Configure WordPress Plugin
-
-1. Note your Vercel production URL (e.g., `https://your-project.vercel.app`)
-2. Zip the `wp-plugin/truckcorp-snow` folder
-3. In WordPress Admin:
-   - Plugins → Add New → Upload Plugin
-   - Upload and activate **TruckCorp Snow App**
-   - Settings → TruckCorp Snow
-   - Enter your Vercel URL and save
-
-### Step 4: Use the Shortcode
-
-Add to any WordPress page or post:
-```
-[truckcorp_snow kb="true"]
-```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 plows-final/
-├── app/                    # Vite React application
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── data/          # KB content (kb.json)
-│   │   └── entry-client.tsx
-│   ├── package.json
-│   ├── vite.config.ts
-│   └── vercel.json        # Vercel configuration
-├── wp-plugin/             # WordPress plugin
-│   └── truckcorp-snow/
-│       └── truckcorp-snow.php
-├── .github/
-│   └── workflows/         # GitHub Actions
-│       └── build.yml      # CI/CD pipeline
-└── README.md
+├── src/
+│   ├── components/     # React components
+│   │   └── KbApp.tsx   # Main knowledgebase component
+│   ├── data/          
+│   │   └── kb.json     # Knowledgebase content
+│   ├── entry-client.tsx # App entry point
+│   └── styles.css      # Global styles
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── vercel.json         # Vercel deployment config
 ```
 
-## Key Features
+## 🌐 Deployment
 
-- **GitHub → Vercel Integration**: Automatic deployments on push
-- **Cross-origin loading**: App loads from Vercel into WordPress
-- **No iframe**: Direct script injection for better integration
-- **CORS configured**: Headers set in vercel.json
-- **WordPress admin panel**: Configure Vercel URL without code changes
-- **CI/CD**: GitHub Actions for build validation
+This app is designed to be deployed on Vercel:
 
-## Environment Variables
+1. Push changes to GitHub
+2. Connect repository to Vercel
+3. Vercel auto-deploys on every push to main
 
-For local development (`.env.local`):
+## 🔧 WordPress Integration
+
+A separate WordPress plugin (not in this repo) loads this app from Vercel:
+- Plugin adds shortcode: `[truckcorp_snow kb="true"]`
+- App loads via script tag (no iframe)
+- CORS headers configured for cross-origin access
+
+## 🎯 Features
+
+- **Accordion Q&A Interface**: Expandable questions and answers
+- **Topic Organization**: Multiple knowledge topics with teasers
+- **Glossary Terms**: Quick reference chips for key terms
+- **Quick Wins**: Actionable tips for each topic
+- **Mobile Responsive**: Works on all device sizes
+
+## 💻 Development
+
+### Environment Variables
+
+Create `.env.local` for local development:
 ```
 VITE_APP_URL=http://localhost:5173
 ```
 
-Vercel will automatically use production URL.
+### Available Scripts
 
-## Next Steps
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
 
-After the foundation is laid:
-1. Customize the knowledgebase content in `app/src/data/kb.json`
-2. Style the components in `app/src/components/`
-3. Add more features as needed
-4. Push changes to GitHub for automatic Vercel deployment
+## 📝 Content Management
 
-## Troubleshooting
+Edit knowledgebase content in `src/data/kb.json`:
 
-- **Local dev issues**: Ensure Node.js 18+ and all dependencies installed
-- **Build failures**: Check GitHub Actions tab for CI errors
-- **Vercel deployment**: Check Vercel dashboard for build logs
-- **WordPress integration**: Verify CORS headers and Vercel URL in settings
+```json
+{
+  "topics": [
+    {
+      "slug": "topic-id",
+      "title": "Topic Title",
+      "teaser": "Brief description",
+      "qas": [
+        {
+          "id": "q1",
+          "q": "Question text?",
+          "a": "Answer text."
+        }
+      ],
+      "glossary": ["term1", "term2"],
+      "quickWins": ["tip1", "tip2"]
+    }
+  ]
+}
+```
+
+## 🛠 Tech Stack
+
+- **React 18** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Vercel** - Hosting platform
