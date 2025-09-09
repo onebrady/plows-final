@@ -11,7 +11,7 @@ import {
 import { cn } from "../../lib/utils";
 
 // Icon mapping
-const iconMap = {
+export const iconMap = {
   snowflake: Snowflake,
   wrench: Wrench, 
   cog: Cog,
@@ -20,12 +20,14 @@ const iconMap = {
   shield: Shield,
 };
 
+export type IconKey = keyof typeof iconMap;
+
 interface Category {
   id: string;
   title: string;
   shortTitle: string;
   description: string;
-  icon: keyof typeof iconMap;
+  icon: IconKey;
   file: string;
 }
 

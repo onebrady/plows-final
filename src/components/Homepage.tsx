@@ -21,8 +21,8 @@ import { getImageUrl, IMAGES } from "../lib/assets";
 export function Homepage() {
   return (
     <Layout>
-      {/* Add top padding */}
-      <div className="pt-8">
+      {/* Add top padding (increased by ~24px) */}
+      <div className="pt-14">
         {/* Header Section - 2 Column Layout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

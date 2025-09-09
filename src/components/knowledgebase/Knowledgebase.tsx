@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Home } from "lucide-react";
 import { Layout } from "../Layout";
 import { cn } from "../../lib/utils";
+import type { IconKey } from "./NavigationCards";
 
 // Lazy load components for code splitting
 const NavigationCards = React.lazy(() => import("./NavigationCards"));
@@ -13,7 +14,7 @@ interface Category {
   title: string;
   shortTitle: string;
   description: string;
-  icon: keyof typeof import("./NavigationCards").iconMap;
+  icon: IconKey;
   file: string;
 }
 
@@ -128,21 +129,23 @@ export function Knowledgebase() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Back to Homepage Button */}
-        <motion.button
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          onClick={() => (window as any).navigateTo('home')}
-          className={cn(
-            "mb-8 flex items-center space-x-2",
-            "text-truckcorp-orange-500 hover:text-truckcorp-orange-600",
-            "transition-colors duration-200"
-          )}
-        >
-          <Home className="w-5 h-5" />
-          <span className="font-medium">Back to Homepage</span>
-        </motion.button>
+        {/* Back to Homepage Button (aligned right to avoid logo overlap) */}
+        <div className="mb-8 flex justify-end">
+          <motion.button
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            onClick={() => (window as any).navigateTo('home')}
+            className={cn(
+              "inline-flex items-center space-x-2",
+              "text-truckcorp-orange-500 hover:text-truckcorp-orange-600",
+              "transition-colors duration-200"
+            )}
+          >
+            <Home className="w-5 h-5" />
+            <span className="font-medium">Back to Homepage</span>
+          </motion.button>
+        </div>
 
         {/* Header */}
         <div className="text-center mb-12">
