@@ -8,8 +8,10 @@ export function WordPressIsolation({ children }: WordPressIsolationProps) {
   useEffect(() => {
     // Only add WordPress-specific styles when needed
     const isWordPressContext = document.querySelector('.tc-snow-container') !== null;
+    const usingShadow = (window as any).__TC_SNOW_SHADOW__ === true;
     
-    if (isWordPressContext && !document.getElementById('truckcorp-wp-fixes')) {
+    // Skip adding extra head styles if Shadow DOM is in use
+    if (isWordPressContext && !usingShadow && !document.getElementById('truckcorp-wp-fixes')) {
       const style = document.createElement('style');
       style.id = 'truckcorp-wp-fixes';
       style.textContent = `
@@ -42,7 +44,7 @@ export function WordPressIsolation({ children }: WordPressIsolationProps) {
     }
 
     return () => {
-      if (isWordPressContext) {
+      if (isWordPressContext && !usingShadow) {
         const existingStyle = document.getElementById('truckcorp-wp-fixes');
         if (existingStyle) {
           existingStyle.remove();

@@ -81,10 +81,45 @@ function initApp() {
     
     // Clear loading content
     container.innerHTML = ''
-    
+
+    // Determine if we should mount into a Shadow DOM for isolation (WordPress context)
+    const isWordPress = (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') || !!document.getElementById('wpadminbar')
+
+    let mountTarget: Element | DocumentFragment = container
+
     try {
+      if ((container as HTMLElement).attachShadow && isWordPress) {
+        console.log('TruckCorp Snow: Using Shadow DOM isolation for WordPress')
+        const shadow = (container as HTMLElement).attachShadow({ mode: 'open' })
+
+        // Clone the Tailwind CSS that our bundle injected into <head> into the shadow root
+        try {
+          const injectedStyle = Array.from(document.querySelectorAll('style')).find(
+            (el) => el.textContent && el.textContent.includes('tailwindcss v4')
+          )
+          if (injectedStyle && injectedStyle.textContent) {
+            const shadowStyle = document.createElement('style')
+            shadowStyle.textContent = injectedStyle.textContent
+            shadow.appendChild(shadowStyle)
+          } else {
+            console.warn('TruckCorp Snow: Could not find injected Tailwind CSS to clone into Shadow DOM')
+          }
+        } catch (cssErr) {
+          console.warn('TruckCorp Snow: Error cloning CSS into Shadow DOM', cssErr)
+        }
+
+        // Create app mount element inside shadow
+        const shadowApp = document.createElement('div')
+        shadowApp.className = 'truckcorp-snow-app-root'
+        shadow.appendChild(shadowApp)
+        mountTarget = shadowApp
+
+        // Mark global so other components can detect shadow usage (to avoid extra head styles)
+        ;(window as any).__TC_SNOW_SHADOW__ = true
+      }
+
       // Render the app with routing
-      const root = createRoot(container)
+      const root = createRoot(mountTarget as Element)
       root.render(<App />)
       console.log('TruckCorp Snow: App rendered successfully')
     } catch (error) {
