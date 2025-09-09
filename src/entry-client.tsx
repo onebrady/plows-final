@@ -5,27 +5,6 @@ import { Knowledgebase } from "./components/knowledgebase/Knowledgebase";
 import { WordPressIsolation } from "./components/WordPressIsolation";
 import "./styles.css";
 
-// Always start at top on page reloads: disable browser scroll restoration
-try {
-  if ("scrollRestoration" in window.history) {
-    window.history.scrollRestoration = "manual" as History['scrollRestoration'];
-  }
-  // Ensure top on load/back-forward cache restore
-  const scrollToTop = () => {
-    try {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      const host = document.querySelector('.tc-snow-container') as HTMLElement | null;
-      if (host) host.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'auto' });
-    } catch {}
-  };
-  if (document.readyState === "complete") {
-    scrollToTop();
-  } else {
-    window.addEventListener("load", scrollToTop, { once: true });
-  }
-  window.addEventListener("pageshow", () => scrollToTop());
-} catch {}
-
 // Simple routing component
 function App() {
   const [currentPage, setCurrentPage] = useState<"home" | "knowledgebase">(
